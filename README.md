@@ -13,9 +13,10 @@ using Vagrant and stand-alone Puppet to manage a VM, it can be even more of a fi
 Do you clone the modules from various git repositories? Create them as submodules
 in your own repository? Install them on the host, or on the guest?
 
-Librarian-puppet can help by managing the Puppet modules used by your Vagrant
-box. But, there is a problem: you can't use Puppet to install Librarian-puppet
-because your Puppet manifests won't compile until your modules are installed.
+[Librarian-puppet](https://github.com/rodjek/librarian-puppet) can help by managing the
+Puppet modules used by your Vagrant box. But, there is a problem: you can't use Puppet 
+to install Librarian-puppet because your Puppet manifests won't compile until your 
+modules are installed.
 
 ## Solution
 
@@ -39,8 +40,6 @@ or add a line in the shell provisioner to install it; an example is in the file.
 * `puppet/manifests/main.pp` - your main Puppet manifest.
 * `puppet/.gitignore` - configured to ignore temporary directories and files created by Librarian-puppet.
 * `puppet/modules/.gitignore` - to force an empty directory to be created for your modules to be installed in.
-them. 
-to
 
 ## Contribute
 
