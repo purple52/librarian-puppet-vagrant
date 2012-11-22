@@ -2,7 +2,7 @@
 
 This is a little example framework that shows how you can use
 [Librarian-puppet](https://github.com/rodjek/librarian-puppet) to manage
-[Puppet](http://puppetlabs.com/) modules when provisioning a virtual manchine
+[Puppet](http://puppetlabs.com/) modules when provisioning a virtual machine
 managed using [Vagrant](http://vagrantup.com).
 
 ## Why?
