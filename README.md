@@ -9,7 +9,7 @@ managed using [Vagrant](http://vagrantup.com).
 
 No-one likes re-inventing the wheel, but using existing Puppet modules can be a
 fiddle unless you use something to manage download and installation. If you're
-using Vagrant and Puppet to manage a VM, it can be even more of a fiddle. 
+using Vagrant and stand-alone Puppet to manage a VM, it can be even more of a fiddle. 
 Do you clone the modules from various git repositories? Create them as submodules
 in your own repository? Install them on the host, or on the guest?
 
@@ -35,7 +35,7 @@ own project. Here's a breakdown of what's required:
 Note that it requires git to be installed on your VM, so either install it on your basebox
 or add a line in the shell provisioner to install it; an example is in the file.
 * `puppet/Puppetfile` - configuration describing what Puppet modules to install. See the
-[Lirbrarian-puppet](https://github.com/rodjek/librarian-puppet) project for details.
+[Librarian-puppet](https://github.com/rodjek/librarian-puppet) project for details.
 * `puppet/manifests/main.pp` - your main Puppet manifest.
 * `puppet/.gitignore` - configured to ignore temporary directories and files created by Librarian-puppet.
 * `puppet/modules/.gitignore` - to force an empty directory to be created for your modules to be installed in.
