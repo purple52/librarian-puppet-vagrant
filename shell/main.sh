@@ -5,10 +5,10 @@ PUPPET_DIR=/etc/puppet/
 
 # NB: librarian-puppet might need git installed. If it is not already installed
 # in your basebox, this will manually install it at this point using apt or yum
-if [! -x /usr/bin/git]; then
-    if [ -x /usr/sbin/yum]; then
+if ! [ -x /usr/bin/git ]; then
+    if [ -x /usr/sbin/yum ]; then
         yum -q -y install git
-    elif [ -x /usr/sbin/apt-get ]
+    elif [ -x /usr/sbin/apt-get ]; then
         apt-get -q -y install git
     else
         echo "No package installer available. You may need to install git manually."
