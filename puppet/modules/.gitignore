@@ -1,7 +1,0 @@
-# This directory will be managed by librarian-puppet. Initially, it needs to
-# be created but empty
-
-# Ignore everything in this directory
-*
-# Except this file
-!.gitignore

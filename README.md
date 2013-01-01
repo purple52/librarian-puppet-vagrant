@@ -34,12 +34,13 @@ own project. Here's a breakdown of what's required:
     + A Puppet provisioner definition
 * `shell/main.sh` - a simple shell provisioner to install and run Librarian-puppet.
 Note that it requires git to be installed on your VM, so either install it on your basebox
-or add a line in the shell provisioner to install it; an example is in the file.
+or add a line in the shell provisioner to install it; an example is in the file. You also need to
+configure this script to install Puppet modules in the correct place. By default, it will put them
+in `/etc/puppet`.
 * `puppet/Puppetfile` - configuration describing what Puppet modules to install. See the
 [Librarian-puppet](https://github.com/rodjek/librarian-puppet) project for details.
 * `puppet/manifests/main.pp` - your main Puppet manifest.
 * `puppet/.gitignore` - configured to ignore temporary directories and files created by Librarian-puppet.
-* `puppet/modules/.gitignore` - to force an empty directory to be created for your modules to be installed in.
 
 ## Contribute
 
