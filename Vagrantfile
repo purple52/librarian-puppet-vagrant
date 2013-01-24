@@ -71,7 +71,7 @@ Vagrant::Config.run do |config|
 
   # Now run the puppet provisioner. Note that the modules directory is entirely
   # managed by librarian-puppet
-  config.vm.provision :puppet, :module_path => "puppet/modules" do |puppet|
+  config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet/manifests"
     puppet.manifest_file  = "main.pp"
   end
