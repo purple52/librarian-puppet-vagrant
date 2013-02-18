@@ -10,8 +10,10 @@ APT_GET=/usr/bin/apt-get
 YUM=/usr/sbin/yum
 if [ ! -x $GIT ]; then
     if [ -x $YUM ]; then
+        yum -q -y makecache
         yum -q -y install git
     elif [ -x $APT_GET ]; then
+        apt-get -q -y update
         apt-get -q -y install git
     else
         echo "No package installer available. You may need to install git manually."
