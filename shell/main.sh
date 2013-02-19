@@ -22,7 +22,7 @@ fi
 
 cp /vagrant/puppet/Puppetfile $PUPPET_DIR
 
-if [ `gem query --local | grep librarian-puppet | wc -l` -eq 0 ]; then
+if [ "$(gem search -i librarian-puppet)" = "false" ]; then
   gem install librarian-puppet
   cd $PUPPET_DIR && librarian-puppet install --clean
 else
