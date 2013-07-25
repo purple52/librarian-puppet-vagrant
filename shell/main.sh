@@ -30,6 +30,9 @@ else
   echo 'git found.'
 fi
 
+if [ ! -d "$PUPPET_DIR" ]; then
+  mkdir -p $PUPPET_DIR
+fi
 cp /vagrant/puppet/Puppetfile $PUPPET_DIR
 
 if [ "$(gem search -i librarian-puppet)" = "false" ]; then
