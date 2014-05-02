@@ -35,7 +35,7 @@ if [ ! -d "$PUPPET_DIR" ]; then
 fi
 cp /vagrant/puppet/Puppetfile $PUPPET_DIR
 
-if [ "$(gem search -i librarian-puppet)" = "false" ]; then
+if [ "$(gem list -i '^librarian-puppet$')" = "false" ]; then
   gem install librarian-puppet
   cd $PUPPET_DIR && librarian-puppet install --clean
 else
