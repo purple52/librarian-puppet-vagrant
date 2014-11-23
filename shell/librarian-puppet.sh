@@ -57,17 +57,12 @@ elif [ "${FOUND_APT}" -eq '0' ]; then
 
   # Make sure librarian-puppet is installed
   if [ "$FOUND_LP" -ne '0' ]; then
-
-    if [ -n "$(apt-cache search librarian-puppet)" ]; then
-       apt-get -q -y install librarian-puppet
-       echo 'Librarian-puppet installed from package'
-    else
-       if [ -n "$(apt-cache search ruby-json)" ]; then
-         # Try and install json dependency from package if possible
-         apt-get -q -y install ruby-json
-       fi
-       InstallLibrarianPuppetGem
+    if [ -n "$(apt-cache search ruby-json)" ]; then
+      # Try and install json dependency from package if possible
+      apt-get -q -y install ruby-json
     fi
+    apt-get -q -y install ruby1.9.1-dev
+    InstallLibrarianPuppetGem
   fi
 
 else
