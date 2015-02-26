@@ -19,6 +19,9 @@ InstallLibrarianPuppetGem () {
   RUBY_VERSION=$(ruby -e 'print RUBY_VERSION')
   case "$RUBY_VERSION" in
     1.8.*)
+      # For ruby 1.8.x librarian-puppet needs to use 'highline' 1.6.x
+      # highline >= 1.7.0 requires ruby >= 1.9.3
+      gem install highline --version "~>1.6.0" > /dev/null 2>&1
       # Install the most recent 1.x.x version, but not 2.x.x which needs Ruby 1.9
       gem install librarian-puppet --version "~>1"
       ;;
