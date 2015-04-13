@@ -16,7 +16,11 @@ Vagrant.configure("2") do |config|
   # This shell provisioner installs librarian-puppet and runs it to install
   # puppet modules. This has to be done before the puppet provisioning so that
   # the modules are available when puppet tries to parse its manifests.
-  config.vm.provision :shell, :path => "shell/librarian-puppet.sh"
+  config.vm.provision :shell do |shell|
+    shell.path = "shell/librarian-puppet.sh"
+  # uncomment the next line if you want to install the librarian-ruby gem instead the package
+  #  shell.args = "-g"
+  end
 
   # Now run the puppet provisioner. Note that the modules directory is entirely
   # managed by librarian-puppet
